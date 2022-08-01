@@ -1,0 +1,25 @@
+{
+    "name": "antikode/pinata-cloud",
+    "description": "PHP Package for Pinata API",
+    "autoload": {
+        "psr-4": {
+            "Antikode\\PinataCloud\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rafi Halilintar",
+            "email": "masitingss@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Antikode\\PinataCloud\\MyPinataServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.4"
+    }
+}

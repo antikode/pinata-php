@@ -1,5 +1,5 @@
-# Pinata PHP SDK
-#### PHP Package for Pinata API
+# Laravel Pinata
+#### Laravel Package to Integrate Pinata API
 
 This package will make PHP able to integrate with https://www.pinata.cloud/
 

@@ -8,7 +8,7 @@ class Request
 {
     protected $base = 'https://api.pinata.cloud/';
 
-    public function fetch($endpoint, array $body = null, $method = 'get')
+    public function fetch($endpoint, mixed $body = null, $method = 'get')
     {
         $client = new Client([
             'base_uri' => $this->base,

@@ -15,4 +15,19 @@ class MyPinata extends Request
     {
         return 'getPin';
     }
+
+    public function pinJson($name, array $keyValues = null, $content)
+    {
+        $data = [
+            'pinataOptions' => [
+                'cidVersion' => 0
+            ],
+            'pinataMetadata' => [
+                'name' => $name,
+                'keyValues' => $keyValues
+            ],
+            'pinataContent' => $content
+        ];
+        return $this->fetch('pinning/pinJSONToIPFS', json_encode($data), 'POST');
+    }
 }

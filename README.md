@@ -68,3 +68,11 @@ $name = 'Moondogz';
 $cid = 'QmRT1o23bkiHTjUrUkL2XDGSj3yV7LFmwShWiBEcsgVLaT';
 return $pinata->pinByCID($cid, $name, $keyVal);
 ```
+
+#### List Pin By CID Jobs:
+When using the pinByCID function, you may want to programmatically check on the status of CIDs you'd requested to be pinned to your account. This endpoint allows you to do so.
+```php
+$pinata = Pinata::init(0);
+// sort can be ASC or DESC
+return $pinata->listPinJob('ASC');
+```

@@ -49,5 +49,10 @@ class MyPinata extends Request
         ];
         return $this->fetch('pinning/pinByHash', json_encode($data), 'POST');
     }
+
+    public function listPinJob($sort = 'ASC')
+    {
+        return $this->fetch('pinning/pinJobs?status=retrieving&sort='.$sort);
+    }
     
 }

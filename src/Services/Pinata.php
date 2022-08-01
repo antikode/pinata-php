@@ -12,11 +12,11 @@ class Pinata
         return is_null(config('pinata'));
     }
 
-    public static function init()
+    public static function init($cidVersion = 0)
     {
         if (self::configNotPublished()) {
             throw new ConfigNotFoundException('The configuration was not exists. You must publish the config file first');
         }
-        return new MyPinata();
+        return new MyPinata($cidVersion);
     }
 }

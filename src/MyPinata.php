@@ -6,6 +6,13 @@ use Antikode\PinataCloud\Services\Request;
 
 class MyPinata extends Request
 {
+    protected $cidVersion;
+
+    public function __construct($cidVersion)
+    {
+        $this->cidVersion = $cidVersion;
+    }
+
     public function testAuth()
     {
         return $this->fetch('data/testAuthentication');
@@ -30,4 +37,17 @@ class MyPinata extends Request
         ];
         return $this->fetch('pinning/pinJSONToIPFS', json_encode($data), 'POST');
     }
+
+    public function pinByCID($cid, $name, $keyValues = null)
+    {
+        $data = [
+            'hashToPin' => $cid,
+            'pinataMetadata' => [
+                'name' => $name,
+                'keyvalues' => $keyValues,
+            ]
+        ];
+        return $this->fetch('pinning/pinByHash', json_encode($data), 'POST');
+    }
+    
 }

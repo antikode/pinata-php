@@ -9,7 +9,7 @@ This package will make PHP able to integrate with https://www.pinata.cloud/
 - Pinnning File or Directory
 - Pin JSON
 - Pin by CID
-- List Pin
+- List Pin By CID Jobs
 - Update Metadata
 - Remove Pin
 
@@ -38,8 +38,9 @@ PINATA_JWT=[pinata jwt]
 ```
 
 #### Pinning Metadata (JSON):
-Pinning metadata or JSON file to Pinata
+This function allows the sender to add and pin any JSON object they wish to Pinata's IPFS nodes. 
 ```php
+// Must be array
 $metadata = [
     'id' => 1,
     'uuid' => 'd19a449c-ba3d-435b-b8d3-4abb6fee6a69',
